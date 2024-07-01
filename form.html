@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./vendor/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/Owl-Carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/Owl-Carousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/ldp-global.css">
+</head>
+<style>
+    .active {
+        background-color: red;
+    }
+
+    ul.test-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+</style>
+
+<body>
+    <ul class="test-1">
+        <li>Test 1</li>
+        <li>Test 2</li>
+        <li>Test 3</li>
+        <li>Test 2</li>
+        <li>Test 3</li>
+        <li>Test 2</li>
+        <li>Test 3</li>
+        <li>Test 2</li>
+        <li>Test 3</li>
+
+    </ul>
+    <ul class="test-2">
+        <li>Test 1</li>
+        <li>Test 2</li>
+        <li>test 3</li>
+        <li>Test 2</li>
+        <li>test 3</li>
+        <li>Test 2</li>
+        <li>test 3</li>
+        <li>Test 2</li>
+        <li>test 3</li>
+
+    </ul>
+
+    <script src="./vendor/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/Jquery/jquery.min.js"></script>
+    <script src="./vendor/Owl-Carousel/js/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Function to handle tab switching
+            function handleTabClick(index) {
+                // Add 'active' class to the clicked item in both .test-1 and .test-2
+                $('.test-1 li').eq(index).addClass('active');
+                $('.test-2 li').eq(index).addClass('active');
+
+                // Remove 'active' class from all other items in both .test-1 and .test-2
+                $('.test-1 li').not(':eq(' + index + ')').removeClass('active');
+                $('.test-2 li').not(':eq(' + index + ')').removeClass('active');
+            }
+
+            // Attach click event to all items in .test-1
+            $('.test-1 li').click(function () {
+                // Get the index of the clicked item
+                var index = $(this).index();
+                // Handle the tab click
+                handleTabClick(index);
+            });
+        });
+        // File Upload
+
+        $("#FileInput1").on('change', function (e) {
+            var labelVal = $(".title1").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel1 .title1").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel1 .title1").css({
+                    'color': 'black'
+                });
+                $(".filelabel1").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel1 .title1").text(fileName.slice(0, 4) + '...' + extension);
+                } else {
+                    $(".filelabel1 .title1").text(fileName);
+                }
+            } else {
+                $(".filelabel1 .title1").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput1').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-1').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-1').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-1').on('click', function () {
+                $("#FileInput1").val('');
+                $("#FileInput1 .file-upload-input").val('');
+
+                $(".filelabel1 .title1").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel1").css({
+                    'border': '0'
+                });
+                $(".title1").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-1').on('click', function () {
+                $('#FileInput1 .file-upload-input').val('');
+                $('.title1').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-1').hide();
+            });
+        });
+
+        $("#FileInput2").on('change', function (e) {
+            var labelVal = $(".title2").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel2 .title2").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel2 .title2").css({
+                    'color': 'black'
+                });
+                $(".filelabel2").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel2 .title2").text(fileName.slice(0, 4) + '...' + extension);
+                } else {
+                    $(".filelabel2 .title2").text(fileName);
+                }
+            } else {
+                $(".filelabel2 .title2").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput2').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-2').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-2').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-2').on('click', function () {
+                $("#FileInput2").val('');
+                $("#FileInput2 .file-upload-input").val('');
+
+                $(".filelabel2 .title2").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel2").css({
+                    'border': '0'
+                });
+                $(".title2").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-2').on('click', function () {
+                $('#FileInput2 .file-upload-input').val('');
+                $('.title2').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-2').hide();
+            });
+        });
+
+        $("#FileInput3").on('change', function (e) {
+            var labelVal = $(".title3").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel3 .title3").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel3 .title3").css({
+                    'color': 'black'
+                });
+                $(".filelabel3").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel3 .title3").text(fileName.slice(0, 4) + '...' + extension);
+                } else {
+                    $(".filelabel3 .title3").text(fileName);
+                }
+            } else {
+                $(".filelabel3 .title3").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput3').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-3').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-3').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-3').on('click', function () {
+                $("#FileInput3").val('');
+                $("#FileInput3 .file-upload-input").val('');
+
+                $(".filelabel3 .title3").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel3").css({
+                    'border': '0'
+                });
+                $(".title3").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-3').on('click', function () {
+                $('#FileInput3 .file-upload-input').val('');
+                $('.title3').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-3').hide();
+            });
+        });
+
+        $("#FileInput4").on('change', function (e) {
+            var labelVal = $(".title4").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel4 .title4").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel4 .title4").css({
+                    'color': 'black'
+                });
+                $(".filelabel4").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel4 .title4").text(fileName.slice(0, 4) + '...' + extension);
+                } else {
+                    $(".filelabel4 .title4").text(fileName);
+                }
+            } else {
+                $(".filelabel4 .title4").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput4').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-4').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-4').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-4').on('click', function () {
+                $("#FileInput4").val('');
+                $("#FileInput4 .file-upload-input").val('');
+
+                $(".filelabel4 .title4").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel4").css({
+                    'border': '0'
+                });
+                $(".title4").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-4').on('click', function () {
+                $('#FileInput4 .file-upload-input').val('');
+                $('.title4').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-4').hide();
+            });
+        });
+
+        $("#FileInput5").on('change', function (e) {
+            var labelVal = $(".title5").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel5 .title5").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel5 .title5").css({
+                    'color': 'black'
+                });
+                $(".filelabel5").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel5 .title5").text(fileName.slice(0, 5) + '...' + extension);
+                } else {
+                    $(".filelabel5 .title5").text(fileName);
+                }
+            } else {
+                $(".filelabel5 .title5").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput5').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-5').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-5').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-5').on('click', function () {
+                $("#FileInput5").val('');
+                $("#FileInput5 .file-upload-input").val('');
+
+                $(".filelabel5 .title5").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel5").css({
+                    'border': '0'
+                });
+                $(".title5").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-5').on('click', function () {
+                $('#FileInput5 .file-upload-input').val('');
+                $('.title5').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-5').hide();
+            });
+        });
+
+        $("#FileInput6").on('change', function (e) {
+            var labelVal = $(".title6").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel6 .title6").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel6 .title6").css({
+                    'color': 'black'
+                });
+                $(".filelabel6").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel6 .title6").text(fileName.slice(0, 6) + '...' + extension);
+                } else {
+                    $(".filelabel6 .title6").text(fileName);
+                }
+            } else {
+                $(".filelabel6 .title6").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput6').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-6').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-6').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-6').on('click', function () {
+                $("#FileInput6").val('');
+                $("#FileInput6 .file-upload-input").val('');
+
+                $(".filelabel6 .title6").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel6").css({
+                    'border': '0'
+                });
+                $(".title6").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-6').on('click', function () {
+                $('#FileInput6 .file-upload-input').val('');
+                $('.title6').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-6').hide();
+            });
+        });
+
+        $("#FileInput7").on('change', function (e) {
+            var labelVal = $(".title7").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel7 .title7").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0097C7'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0097C7'
+                //     });
+            } else {
+
+                $(".filelabel7 .title7").css({
+                    'color': 'black'
+                });
+                $(".filelabel7").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel7 .title7").text(fileName.slice(0, 7) + '...' + extension);
+                } else {
+                    $(".filelabel7 .title7").text(fileName);
+                }
+            } else {
+                $(".filelabel7 .title7").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput7').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-7').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-7').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-7').on('click', function () {
+                $("#FileInput7").val('');
+                $("#FileInput7 .file-upload-input").val('');
+
+                $(".filelabel7 .title7").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel7").css({
+                    'border': '0'
+                });
+                $(".title7").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-7').on('click', function () {
+                $('#FileInput7 .file-upload-input').val('');
+                $('.title7').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-7').hide();
+            });
+        });
+
+        $("#FileInput8").on('change', function (e) {
+            var labelVal = $(".title8").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel8 .title8").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0098C8'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0098C8'
+                //     });
+            } else {
+
+                $(".filelabel8 .title8").css({
+                    'color': 'black'
+                });
+                $(".filelabel8").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel8 .title8").text(fileName.slice(0, 8) + '...' + extension);
+                } else {
+                    $(".filelabel8 .title8").text(fileName);
+                }
+            } else {
+                $(".filelabel8 .title8").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput8').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-8').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-8').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-8').on('click', function () {
+                $("#FileInput8").val('');
+                $("#FileInput8 .file-upload-input").val('');
+
+                $(".filelabel8 .title8").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel8").css({
+                    'border': '0'
+                });
+                $(".title8").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-8').on('click', function () {
+                $('#FileInput8 .file-upload-input').val('');
+                $('.title8').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-8').hide();
+            });
+        });
+
+        $("#FileInput9").on('change', function (e) {
+            var labelVal = $(".title9").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel9 .title9").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#0099C9'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #0099C9'
+                //     });
+            } else {
+
+                $(".filelabel9 .title9").css({
+                    'color': 'black'
+                });
+                $(".filelabel9").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel9 .title9").text(fileName.slice(0, 9) + '...' + extension);
+                } else {
+                    $(".filelabel9 .title9").text(fileName);
+                }
+            } else {
+                $(".filelabel9 .title9").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput9').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-9').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-9').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-9').on('click', function () {
+                $("#FileInput9").val('');
+                $("#FileInput9 .file-upload-input").val('');
+
+                $(".filelabel9 .title9").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel9").css({
+                    'border': '0'
+                });
+                $(".title9").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-9').on('click', function () {
+                $('#FileInput9 .file-upload-input').val('');
+                $('.title9').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-9').hide();
+            });
+        });
+
+        $("#FileInput10").on('change', function (e) {
+            var labelVal = $(".title10").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel10 .title10").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001010C10'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001010C10'
+                //     });
+            } else {
+
+                $(".filelabel10 .title10").css({
+                    'color': 'black'
+                });
+                $(".filelabel10").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 10) {
+                    $(".filelabel10 .title10").text(fileName.slice(0, 10) + '...' + extension);
+                } else {
+                    $(".filelabel10 .title10").text(fileName);
+                }
+            } else {
+                $(".filelabel10 .title10").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput10').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-10').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-10').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-10').on('click', function () {
+                $("#FileInput10").val('');
+                $("#FileInput10 .file-upload-input").val('');
+
+                $(".filelabel10 .title10").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel10").css({
+                    'border': '0'
+                });
+                $(".title10").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-10').on('click', function () {
+                $('#FileInput10 .file-upload-input').val('');
+                $('.title10').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-10').hide();
+            });
+        });
+
+        $("#FileInput11").on('change', function (e) {
+            var labelVal = $(".title11").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel11 .title11").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001111C11'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001111C11'
+                //     });
+            } else {
+
+                $(".filelabel11 .title11").css({
+                    'color': 'black'
+                });
+                $(".filelabel11").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 11) {
+                    $(".filelabel11 .title11").text(fileName.slice(0, 11) + '...' + extension);
+                } else {
+                    $(".filelabel11 .title11").text(fileName);
+                }
+            } else {
+                $(".filelabel11 .title11").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput11').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-11').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-11').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-11').on('click', function () {
+                $("#FileInput11").val('');
+                $("#FileInput11 .file-upload-input").val('');
+
+                $(".filelabel11 .title11").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel11").css({
+                    'border': '0'
+                });
+                $(".title11").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-11').on('click', function () {
+                $('#FileInput11 .file-upload-input').val('');
+                $('.title11').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-11').hide();
+            });
+        });
+
+        $("#FileInput12").on('change', function (e) {
+            var labelVal = $(".title12").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel12 .title12").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001212C12'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001212C12'
+                //     });
+            } else {
+
+                $(".filelabel12 .title12").css({
+                    'color': 'black'
+                });
+                $(".filelabel12").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 12) {
+                    $(".filelabel12 .title12").text(fileName.slice(0, 12) + '...' + extension);
+                } else {
+                    $(".filelabel12 .title12").text(fileName);
+                }
+            } else {
+                $(".filelabel12 .title12").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput12').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-12').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-12').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-12').on('click', function () {
+                $("#FileInput12").val('');
+                $("#FileInput12 .file-upload-input").val('');
+
+                $(".filelabel12 .title12").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel12").css({
+                    'border': '0'
+                });
+                $(".title12").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-12').on('click', function () {
+                $('#FileInput12 .file-upload-input').val('');
+                $('.title12').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-12').hide();
+            });
+
+
+            // Clear News Form
+            $('.dustbinicon-12').on('click', function () {
+                alert('llg');
+                $('#newstitle1').val(''); // Clear the input field
+            });
+        });
+
+        $("#FileInput13").on('change', function (e) {
+            var labelVal = $(".title13").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel13 .title13").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001313C13'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001313C13'
+                //     });
+            } else {
+
+                $(".filelabel13 .title13").css({
+                    'color': 'black'
+                });
+                $(".filelabel13").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 13) {
+                    $(".filelabel13 .title13").text(fileName.slice(0, 13) + '...' + extension);
+                } else {
+                    $(".filelabel13 .title13").text(fileName);
+                }
+            } else {
+                $(".filelabel13 .title13").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput13').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-13').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-13').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-13').on('click', function () {
+                $("#FileInput13").val('');
+                $("#FileInput13 .file-upload-input").val('');
+
+                $(".filelabel13 .title13").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel13").css({
+                    'border': '0'
+                });
+                $(".title13").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-13').on('click', function () {
+                $('#FileInput13 .file-upload-input').val('');
+                $('.title13').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-13').hide();
+            });
+
+            $('.dustbinicon-13').on('click', function () {
+
+                $('#newstitle2').val(''); // Clear the input field
+            });
+        });
+
+        $("#FileInput14").on('change', function (e) {
+            var labelVal = $(".title14").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel14 .title14").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001414C14'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001414C14'
+                //     });
+            } else {
+
+                $(".filelabel14 .title14").css({
+                    'color': 'black'
+                });
+                $(".filelabel14").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 14) {
+                    $(".filelabel14 .title14").text(fileName.slice(0, 14) + '...' + extension);
+                } else {
+                    $(".filelabel14 .title14").text(fileName);
+                }
+            } else {
+                $(".filelabel14 .title14").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput14').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-14').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-14').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-14').on('click', function () {
+                $("#FileInput14").val('');
+                $("#FileInput14 .file-upload-input").val('');
+
+                $(".filelabel14 .title14").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel14").css({
+                    'border': '0'
+                });
+                $(".title14").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-14').on('click', function () {
+                $('#FileInput14 .file-upload-input').val('');
+                $('.title14').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-14').hide();
+            });
+
+            $('.dustbinicon-14').on('click', function () {
+
+                $('#newstitle3').val(''); // Clear the input field
+            });
+        });
+
+        $("#FileInput15").on('change', function (e) {
+            var labelVal = $(".title15").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel15 .title15").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001515C15'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001515C15'
+                //     });
+            } else {
+
+                $(".filelabel15 .title15").css({
+                    'color': 'black'
+                });
+                $(".filelabel15").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 15) {
+                    $(".filelabel15 .title15").text(fileName.slice(0, 15) + '...' + extension);
+                } else {
+                    $(".filelabel15 .title15").text(fileName);
+                }
+            } else {
+                $(".filelabel15 .title15").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput15').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-15').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-15').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-15').on('click', function () {
+                $("#FileInput15").val('');
+                $("#FileInput15 .file-upload-input").val('');
+
+                $(".filelabel15 .title15").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel15").css({
+                    'border': '0'
+                });
+                $(".title15").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-15').on('click', function () {
+                $('#FileInput15 .file-upload-input').val('');
+                $('.title15').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-15').hide();
+            });
+
+            $('.dustbinicon-15').on('click', function () {
+
+                $('#newstitle4').val(''); // Clear the input field
+            });
+        });
+
+        $("#FileInput16").on('change', function (e) {
+            var labelVal = $(".title16").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel16 .title16").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001616C16'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001616C16'
+                //     });
+            } else {
+
+                $(".filelabel16 .title16").css({
+                    'color': 'black'
+                });
+                $(".filelabel16").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 16) {
+                    $(".filelabel16 .title16").text(fileName.slice(0, 16) + '...' + extension);
+                } else {
+                    $(".filelabel16 .title16").text(fileName);
+                }
+            } else {
+                $(".filelabel16 .title16").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput16').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-16').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-16').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-16').on('click', function () {
+                $("#FileInput16").val('');
+                $("#FileInput16 .file-upload-input").val('');
+
+                $(".filelabel16 .title16").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel16").css({
+                    'border': '0'
+                });
+                $(".title16").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-16').on('click', function () {
+                $('#FileInput16 .file-upload-input').val('');
+                $('.title16').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-16').hide();
+            });
+
+            $('.dustbinicon-16').on('click', function () {
+
+                $('#newstitle5').val(''); // Clear the input field
+            });
+        });
+
+
+        $("#FileInput17").on('change', function (e) {
+            var labelVal = $(".title17").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel17 .title17").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001717C17'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001717C17'
+                //     });
+            } else {
+
+                $(".filelabel17 .title17").css({
+                    'color': 'black'
+                });
+                $(".filelabel17").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 17) {
+                    $(".filelabel17 .title17").text(fileName.slice(0, 17) + '...' + extension);
+                } else {
+                    $(".filelabel17 .title17").text(fileName);
+                }
+            } else {
+                $(".filelabel17 .title17").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput17').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-17').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-17').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-17').on('click', function () {
+                $("#FileInput17").val('');
+                $("#FileInput17 .file-upload-input").val('');
+
+                $(".filelabel17 .title17").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel17").css({
+                    'border': '0'
+                });
+                $(".title17").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-17').on('click', function () {
+                $('#FileInput17 .file-upload-input').val('');
+                $('.title17').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-17').hide();
+            });
+
+            $('.dustbinicon-17').on('click', function () {
+
+                $('#name1').val(''); // Clear the input field
+                $('#des1').val('');
+                $('#meass1').val('');
+            });
+        });
+
+        $("#FileInput18").on('change', function (e) {
+            var labelVal = $(".title18").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel18 .title18").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001818C18'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001818C18'
+                //     });
+            } else {
+
+                $(".filelabel18 .title18").css({
+                    'color': 'black'
+                });
+                $(".filelabel18").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 18) {
+                    $(".filelabel18 .title18").text(fileName.slice(0, 18) + '...' + extension);
+                } else {
+                    $(".filelabel18 .title18").text(fileName);
+                }
+            } else {
+                $(".filelabel18 .title18").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput18').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-18').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-18').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-18').on('click', function () {
+                $("#FileInput18").val('');
+                $("#FileInput18 .file-upload-input").val('');
+
+                $(".filelabel18 .title18").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel18").css({
+                    'border': '0'
+                });
+                $(".title18").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-18').on('click', function () {
+                $('#FileInput18 .file-upload-input').val('');
+                $('.title18').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-18').hide();
+            });
+
+            $('.dustbinicon-18').on('click', function () {
+
+                $('#name2').val(''); // Clear the input field
+                $('#des2').val('');
+                $('#mess2').val('');
+            });
+        });
+
+
+        $("#FileInput19").on('change', function (e) {
+            var labelVal = $(".title19").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel19 .title19").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#001919C19'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #001919C19'
+                //     });
+            } else {
+
+                $(".filelabel19 .title19").css({
+                    'color': 'black'
+                });
+                $(".filelabel19").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 19) {
+                    $(".filelabel19 .title19").text(fileName.slice(0, 19) + '...' + extension);
+                } else {
+                    $(".filelabel19 .title19").text(fileName);
+                }
+            } else {
+                $(".filelabel19 .title19").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput19').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-19').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-19').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-19').on('click', function () {
+                $("#FileInput19").val('');
+                $("#FileInput19 .file-upload-input").val('');
+
+                $(".filelabel19 .title19").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel19").css({
+                    'border': '0'
+                });
+                $(".title19").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-19').on('click', function () {
+                $('#FileInput19 .file-upload-input').val('');
+                $('.title19').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-19').hide();
+            });
+
+            $('.dustbinicon-19').on('click', function () {
+
+                $('#name3').val(''); // Clear the input field
+                $('#des3').val('');
+                $('#mess3').val('');
+            });
+        });
+
+        $("#FileInput20").on('change', function (e) {
+            var labelVal = $(".title20").text();
+            var oldfileName = $(this).val();
+            fileName = e.target.value.split('\\').pop();
+
+            if (oldfileName == fileName) {
+                return false;
+            }
+            var extension = fileName.split('.').pop();
+
+            if ($.inArray(extension, ['jpg', 'jpeg', 'png']) >= 0) {
+                // $(".filelabel1 i").removeClass().addClass('fa fa-file-image-o');
+                $(" .filelabel20 .title20").css({
+                    'color': '#0097C7'
+                });
+
+                // } else if (extension == 'pdf') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-pdf-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': 'red'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid red'
+                //     });
+
+                // } else if (extension == 'doc' || extension == 'docx') {
+                //     $(".filelabel i").removeClass().addClass('fa fa-file-word-o');
+                //     $(".filelabel i, .filelabel .title").css({
+                //         'color': '#002020C20'
+                //     });
+                //     $(".filelabel").css({
+                //         'border': ' 2px solid #002020C20'
+                //     });
+            } else {
+
+                $(".filelabel20 .title20").css({
+                    'color': 'black'
+                });
+                $(".filelabel20").css({
+                    'border': ' 2px solid black'
+                });
+            }
+
+            if (fileName) {
+                if (fileName.length > 20) {
+                    $(".filelabel20 .title20").text(fileName.slice(0, 20) + '...' + extension);
+                } else {
+                    $(".filelabel20 .title20").text(fileName);
+                }
+            } else {
+                $(".filelabel20 .title20").text(labelVal);
+            }
+
+            // Code for show dustbin icon when file upload
+            $('#FileInput20').on('change', function (event) {
+                const input = event.target;
+
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        // $('#previewImg').attr('src', e.target.result);
+                        $('.dustbinicon-20').css("display", "flex");;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('.dustbinicon-20').hide();
+                }
+            });
+
+            // code for after the delete clear file upload field
+            $('.dustbinicon-20').on('click', function () {
+                $("#FileInput20").val('');
+                $("#FileInput20 .file-upload-input").val('');
+
+                $(".filelabel20 .title20").css({
+                    'color': '#0E0E0E'
+                });
+                $(".filelabel20").css({
+                    'border': '0'
+                });
+                $(".title20").text('Upload');
+            });
+
+            // Code for hide dustbin icon when clear field
+            $('.dustbinicon-20').on('click', function () {
+                $('#FileInput20 .file-upload-input').val('');
+                $('.title20').val('');
+                // $('#previewImg').attr('src', '');
+                $('.dustbinicon-20').hide();
+            });
+
+            $('.dustbinicon-20').on('click', function () {
+
+                $('#name4').val(''); // Clear the input field
+                $('#des4').val('');
+                $('#mess4').val('');
+            });
+        });
+        // Reset admin microsite form
+        document.querySelector("#resetFirst").addEventListener("click", (event) => {
+            document.querySelector("#quizForm").reset();
+            event.preventDefault();
+        });
+
+    </script>
+</body>
+
+</html>

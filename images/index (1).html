@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Div Example</title>
+    <style>
+
+        .side-nav {
+            width: 200px;
+            background-color: #f8f9fa;
+            position:sticky;
+            top: 50px;
+            height:200px;
+        }
+        .side-nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .side-nav a.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            flex-grow: 1;
+            
+        }
+        .content div {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            height: 200px;
+        }
+        *{
+  transition:all ease 0.3s;
+  margin:0;
+  box-sizing: border-box;
+}
+.header{
+  background:red;
+  width:100%;
+  height:200px;
+}
+.header.search{
+  background:yellow;
+  position:sticky;
+  height:50px;
+  top:0;
+}
+.container{
+  display:flex;
+  min-height:800px;
+  position:sticky;
+  
+}
+.left{
+  width: 20%;
+  height:100px;
+  background:blue;
+  
+}
+.right{
+  width:80%;
+}
+a{
+  color:white;
+  display:block;
+}
+.box{
+  height:200px;
+  background:green;
+  width:100%;
+}
+footer{
+  background:black;
+  height:200px;
+  width:100%;
+}
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="header search"></div>
+    <div class="container">
+
+        <div class="side-nav">
+            <a href="#" data-target="div1">Go to Div 1</a>
+            <a href="#" data-target="div2">Go to Div 2</a>
+            <a href="#" data-target="div3">Go to Div 3</a>
+            <a href="#" data-target="div4">Go to Div 1</a>
+            <a href="#" data-target="div5">Go to Div 2</a>
+            <a href="#" data-target="div6">Go to Div 3</a>
+        </div>
+        <div class="content">
+            <div id="div1">Div 1</div>
+            <div id="div2">Div 2</div>
+            <div id="div3">Div 3</div>
+            <div id="div4">Div 1</div>
+            <div id="div5">Div 2</div>
+            <div id="div6">Div 3</div>
+        </div>
+    </div>
+    <footer></footer>
+    <script>
+         const offset = 50; // Offset for sticky header
+
+document.querySelectorAll('.side-nav a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        }
+        setActiveLink(this);
+    });
+});
+
+function setActiveLink(link) {
+    document.querySelectorAll('.side-nav a').forEach(link => link.classList.remove('active'));
+    link.classList.add('active');
+}
+
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('.content div');
+    let currentSection = null;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - offset) {
+            currentSection = section;
+        }
+    });
+
+    if (currentSection) {
+        const id = currentSection.getAttribute('id');
+        const activeLink = document.querySelector(`.side-nav a[data-target="${id}"]`);
+        setActiveLink(activeLink);
+    }
+});
+    </script>
+</body>
+</html>

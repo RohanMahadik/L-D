@@ -1,0 +1,22 @@
+/* CSS START FOR FOOTER */
+footer{
+    background-color: #231F20;
+    color: #ffff;
+    padding: 56px 0;
+}
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 88px;
+    border-bottom: 1px solid #71777D;
+}
+.footer__logo{
+    height: 52px;
+    width: 250px;
+}
+.footer__contactus{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.3;
+}

@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./vendor/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/Owl-Carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/Owl-Carousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./vendor/Videojs/css/video-js.css">
+    <link rel="stylesheet" href="./css/ldp-global.css">
+</head>
+
+<body>
+    <!-- HEADER SECTION START -->
+    <header class="header  " id="header">
+
+        <div class="container-fluid">
+            <div class="header__container">
+                <div class="header__logosection d-flex align-items-center">
+                    <img src="images/Union_Bank_of_India_Logo.png" alt="Union_Bank_of_India_Logo" class="img-fluid">
+                    <img src="images/advit-logo.png" class="advit-logo" alt="advit-logo" class="img-fluid">
+                </div>
+                <div class="header__menusection">
+                    <nav class="header__navbar">
+
+                        <ul class="header__navbarlist p-0">
+                            <li>
+                                <a href="./index.html" class="active">Home</a>
+                            </li>
+                            <li>
+                                <a href="./about-us.html" class="">About Us</a>
+                            </li>
+                            <li>
+                                <a href="./whatisit.html" class="">What’s In It?</a>
+
+                            </li>
+                            <li>
+
+                                <a href="./faculty.html" class=""> Faculty</a>
+                            </li>
+                            <li>
+                                <a href="./apply.html" class="header__applylink">
+                                    <span class="pagelink__apply">Apply <img src="images/aply-cursor.png"
+                                            alt="apply-cursor" class="pagelink__linkscursor" class="img-fluid"></span>
+                                </a>
+
+                            </li>
+                            <!-- <li>
+                                <a href="">Curriculum</a>
+
+                            </li> -->
+                            <li>
+                                <a href="./faq.html" class="">FAQs</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class="header__lastsection">
+                    <span class=" header__sidebarclick mx-2">
+                        <img src="images/menu-icon.png" alt="menu-icon" class="img-fluid">
+                    </span>
+
+                    <a href="javascript:void(0)" class=" header__otherlink mx-2" class="img-fluid">
+                        <i class="fa fa-upload"></i>
+                    </a>
+
+                    <a href="javascript:void(0)" class="header__login mx-2"><span class="mx-2"> <img
+                                src="images/next-page.png" alt="menu-icon" class="img-fluid"></span>Login</a>
+
+                    <a href="javascript:void(0)" class="header__login mx-2 d-none"><span class="mx-2">
+                            <img src="images/next-page.png" alt="menu-icon" class="img-fluid"></span>Logout</a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- <div class="container navbar">
+            <div class="unilogo">
+                <img src="../images/Union_Bank_of_India_Logo.png">
+            </div>
+            <nav>
+                <ul class="ldp-nav-link">
+                    <li class="ldp-nav-links active">
+                        Home
+                    </li>
+                    <li class="ldp-nav-links">
+                        About Us
+                    </li>
+                    <li class="ldp-nav-links">
+                        What’s In It?
+                    </li>
+                    <li class="ldp-nav-links">
+                        Faculty
+                    </li>
+                    <li class="ldp-nav-links">
+                        Curriculum
+                    </li>
+                    <li class="ldp-nav-links">
+                        FAQs
+                    </li>
+                    <li class="ldp-nav-links">
+                        <div class="ham-box"></div>
+                    </li>
+                </ul>
+                <button class="ldp-logbut">
+                    <img src="../images/loginicon.png">
+                </button>
+
+            </nav>
+        </div> -->
+    </header>
+    <main>
+        <!-- FAQ SECTION  -->
+        <section class="faqs " id="myBox">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="row mb-5">
+                    <div class="col-lg-8 ">
+
+                        <!-- Custom rounded search bars with input group -->
+                        <form action="">
+
+                            <div class="input-group mb-4 border">
+                                <input type="search" id="searchInput" placeholder="Search FAQs"
+                                    aria-describedby="button-addon3"
+                                    class="form-control bg-none border-0 faqs__searchfaq">
+                                <div class="input-group-append border-0">
+                                    <button id="button-addon3" type="button" onclick="highlightTerm()"
+                                        class="btn btn-link text-success"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <!-- End -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="faqanswers " id="faqanswers1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+
+
+                        <nav id="navbar-example" class="navbar  ">
+                            <h3 class="title-faqquestion">Questions by Topic</h3>
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link faqs-links" href="#section1" id="QAL"><span><img
+                                                src="images/Arrow.svg" alt=""></span>Questions About LDP</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link faqs-links" href="#section2" id="ATL"><span><img
+                                                src="images/Arrow.svg" alt=""></span>Applying to LDP</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link faqs-links" href="#section3" id="EC"><span><img
+                                                src="images/Arrow.svg" alt=""></span>Eligiblity Criteria</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link faqs-links" href="#section4" id="SC"><span><img
+                                                src="images/Arrow.svg" alt=""></span>Selection Criteria</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link faqs-links" href="#section5" id="TC"><span><img
+                                                src="images/Arrow.svg" alt=""></span>Training & Coaching</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+
+
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <div id="content">
+
+                            <div id="section1" class="scroll">
+                                <div class="faqnews__questions">
+                                    <div class="faqque__title">
+                                        <h3>Leadership Development Program</h3>
+                                        <div class="accordion" id="accordionExamplefaq">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOnefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOnefaq"
+                                                        aria-expanded="false" aria-controls="collapseOnefaq">
+                                                        What is the mission of the leadership development program?
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOnefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingOnefaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        The mission of the program is to empower leadership excellence,
+                                                        dedicated to cultivating visionary leaders who drive innovation
+                                                        and
+                                                        adaptability.
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwofaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwofaq"
+                                                        aria-expanded="false" aria-controls="collapseTwofaq">
+                                                        Who is eligible to participate in the program?
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwofaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingTwofaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        The program is open to employees who fit into the eligibility
+                                                        criteria as per the given Selection Process. The aim is to
+                                                        provide
+                                                        this exclusive opportunity to employees having great leadership
+                                                        potential and a commitment to personal and professional growth.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingThreefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseThreefaq"
+                                                        aria-expanded="false" aria-controls="collapseThreefaq">
+                                                        How do I apply for the leadership development program?
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThreefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingThreefaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Interested candidates can apply through the Application Form
+                                                        available to you. Make sure you fit into the eligible criteria
+                                                        before you fill up the form.
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingFourfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseFourfaq"
+                                                        aria-expanded="false" aria-controls="collapseFourfaq">
+                                                        What is the duration of the program?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFourfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingFourfaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        The program lasts for one year, with training sessions held
+                                                        every
+                                                        two months, coaching sessions spread across and other learning
+                                                        interventions as well.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingfivefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapsefivefaq"
+                                                        aria-expanded="false" aria-controls="collapsefivefaq">
+                                                        What is the format of the program?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsefivefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingfivefaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        The program includes in-person trainings, workshops, one-on-one
+                                                        coaching sessions, group projects, and case studies.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingfivefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapsefivefaq"
+                                                        aria-expanded="false" aria-controls="collapsefivefaq">
+                                                        What are the benefits of completing the program?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsefivefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingfivefaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        In addition to receiving the coveted completion certificate of
+                                                        Union
+                                                        Advith, employees will gain advanced leadership skills,
+                                                        increased
+                                                        visibility within the organization, potential for career
+                                                        advancement
+                                                        and opportunities to network with like-minded peers.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingsixfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapsesixfaq"
+                                                        aria-expanded="false" aria-controls="collapsesixfaq">
+                                                        What are the benefits of completing the program?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsesixfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingsixfaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        In addition to receiving the coveted completion certificate of
+                                                        Union
+                                                        Advith, employees will gain advanced leadership skills,
+                                                        increased
+                                                        visibility within the organization, potential for career
+                                                        advancement
+                                                        and opportunities to network with like-minded peers.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingsevenfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapsesevenfaq"
+                                                        aria-expanded="false" aria-controls="collapssevenfaq">
+                                                        Will I receive any support from my manager?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsesevenfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingsevenfaq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Yes, participants will be encouraged to work closely with their
+                                                        managers to align the program’s objectives with their
+                                                        professional
+                                                        development goals.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading8faq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse8faq"
+                                                        aria-expanded="false" aria-controls="collapse8faq">
+                                                        What happens if I need to miss a session?
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse8faq" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading8faq" data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Once nominated, attendance becomes mandatory. However, in case
+                                                        of
+                                                        extreme circumstances wherein you get to miss a training, you
+                                                        will
+                                                        have to write to the Advith team to reconsider you with the next
+                                                        batch.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading9faq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse9faq"
+                                                        aria-expanded="false" aria-controls="collapse9faq">
+                                                        Can I provide feedback on the program?
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse9faq" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading9faq" data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        Yes, participant feedback is highly valued and will be used to
+                                                        improve future iterations of the program.
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading10faq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse10faq"
+                                                        aria-expanded="false" aria-controls="collapse10faq">
+                                                        How will this program impact my career growth?
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse10faq" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading10faq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        The program is designed to equip you with the skills and
+                                                        knowledge
+                                                        necessary to take on higher-level leadership roles within the
+                                                        organization.
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading10faq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse10faq"
+                                                        aria-expanded="false" aria-controls="collapse10faq">
+                                                        Are there any prerequisites for joining the program?
+
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse10faq" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading10faq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        While there are no formal prerequisites, a demonstrated
+                                                        commitment
+                                                        to leadership and personal development is expected.
+
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="heading11faq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapse11faq"
+                                                        aria-expanded="false" aria-controls="collapse11faq">
+                                                        How does this program align with the company’s strategic goals?
+
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapse11faq" class="accordion-collapse collapse"
+                                                    aria-labelledby="heading11faq"
+                                                    data-bs-parent="#accordionExamplefaq">
+                                                    <div class="accordion-body">
+                                                        The program is designed to develop leaders who can drive the
+                                                        company’s strategic initiatives and contribute to its long-term
+                                                        success. The program is also designed to be aligned with the
+                                                        must-have behavioral competencies defined for the employees of
+                                                        the
+                                                        Bank.
+
+
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div id="section2" class="mt-3 scroll">
+                                <div class="faqnews__questions">
+                                    <div class="faqque__title">
+                                        <h3>Applying to LDP
+                                        </h3>
+                                        <div class="accordion" id="ATD">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingATDOnefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseATDOnefaq"
+                                                        aria-expanded="false" aria-controls="collapseATDOnefaq">
+                                                        How can I apply for the program?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseATDOnefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingATDOnefaq" data-bs-parent="#ATD">
+                                                    <div class="accordion-body">
+                                                        You can apply for the program through the application form
+                                                        available
+                                                        on the EKAM portal through the Union’s Advith microsite. It is
+                                                        mandatory for all eligible employees to apply for the program.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingATDTwofaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseATDTwofaq"
+                                                        aria-expanded="false" aria-controls="collapseATDTwofaq">
+                                                        How much time will it take for filling the form?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseATDTwofaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingATDTwofaq" data-bs-parent="#ATD">
+                                                    <div class="accordion-body">
+                                                        You are advised to spend at least 30 mins to 1 hour for filling
+                                                        the
+                                                        form. We encourage you to not wait till the deadline to start
+                                                        filling the form, kindly plan to take out time well in advance
+                                                        and
+                                                        complete it.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingATDThreefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseATDThreefaq"
+                                                        aria-expanded="false" aria-controls="collapseATDThreefaq">
+                                                        What is the deadline for filling the form?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseATDThreefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingATDThreefaq" data-bs-parent="#ATD">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        The deadline for filling the form is 19 June 2024.
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingATDFourfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseATDFourfaq"
+                                                        aria-expanded="false" aria-controls="collapseATDFourfaq">
+                                                        On clicking the form link on the microsite, it asks me to login.
+                                                        Why is that required?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseATDFourfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingATDFourfaq" data-bs-parent="#ATD">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        You are required to login since we need to capture Employee name
+                                                        and
+                                                        PF ID along with the other details submitted. It is a measure to
+                                                        ensure that only eligible employees are able to fill the form.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingATDfivefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseATDfivefaq"
+                                                        aria-expanded="false" aria-controls="collapseATDfivefaq">
+                                                        Is there anything else I need to do apart from filling up the
+                                                        form to apply for Union’s Advith?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseATDfivefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingATDfivefaq" data-bs-parent="#ATD">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        You need to ensure that your awards and certifications displayed
+                                                        on
+                                                        the portal are up-to-date and accurate. In case those are not
+                                                        updated, please update the same by 17 June’24 on the Parivar
+                                                        portal.
+                                                        You also need to nudge and ensure that your past and current
+                                                        managers fill up their recommendation inputs for you.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div id="section3" class="mt-3 scroll">
+                                <div class="faqnews__questions">
+                                    <div class="faqque__title">
+                                        <h3>Eligibility Criteria
+                                        </h3>
+                                        <div class="accordion" id="ec">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingeconefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseeconefaq"
+                                                        aria-expanded="false" aria-controls="collapseeconefaq">
+                                                        What is the minimum service requirement for executives to be
+                                                        eligible for the Union Advith Leadership Development Program?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseeconefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingeconefaq" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+                                                        • Scale IV executives: Minimum 5 years of service in the bank
+                                                        • Scale V executives: Minimum 7 years of service in the bank
+                                                        • Scale VI executives: Minimum 10 years of service in the bank
+                                                        This calculation would be made as of 31st March 2024.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingecfaqtwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecfaqtwo"
+                                                        aria-expanded="false" aria-controls="collapseecfaqtwo">
+                                                        How much residual service must executives have to be eligible
+                                                        for
+                                                        the program?
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecfaqtwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecfaqtwo" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+                                                        • Scale IV executives: At least 10 years of residual service
+                                                        • Scale V executives: At least 7 years of residual service
+                                                        • Scale VI executives: At least 5 years of residual service
+                                                        This calculation would be made as of 31st March 2024.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingecfaqthree">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecfaqthree"
+                                                        aria-expanded="false" aria-controls="collapseecfaqthree">
+                                                        How is the residual service calculated for eligibility?
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecfaqthree" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecfaqthree" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        Residual service is calculated based on the remaining years an
+                                                        executive is expected to serve with the bank before their
+                                                        superannuation. The cutoff date for the same shall be 31st March
+                                                        2024.
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingecfourfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecfourfaq"
+                                                        aria-expanded="false" aria-controls="collapseecfourfaq">
+                                                        What EKAM score is required for eligibility?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecfourfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecfourfaq" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        Executives must have an average annual EKAM score of at least 75
+                                                        in
+                                                        the past 2 years to be eligible for the program.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingecfivefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecfivefaq"
+                                                        aria-expanded="false" aria-controls="collapseecfivefaq">
+                                                        What if my EKAM marks are not available for a year in the last
+                                                        two years due to leave?
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecfivefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecfivefaq" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Executives whose EKAM marks are not available for the last two
+                                                        years
+                                                        due to sabbatical leave or authorized leave on medical grounds
+                                                        will
+                                                        be considered based on the appraisal marks from the last two
+                                                        available years.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingselectionsixfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecsixfaq"
+                                                        aria-expanded="false" aria-controls="collapseecsixfaq">
+                                                        Are there any other additional conditions to be eligible?
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecsixfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecsixfaq" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Yes, there are 3 more conditions apart from the minimum years of
+                                                        service, residual years of service and average appraisal marks.
+                                                        - 100% completion of mandatory E-learning modules in the past 2
+                                                        years
+                                                        - Must not be on deputation to any other organization
+                                                        Must not have an ongoing (active) vigilance or non-vigilance
+                                                        case
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingecsevenfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecsevenfaq"
+                                                        aria-expanded="false" aria-controls="collapseecsevenfaq">
+                                                        What is the application process for the program?
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecsevenfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecsevenfaq" data-bs-parent="#ec">
+                                                    <div class="accordion-body">
+
+
+                                                        Eligible executives must apply by submitting an application form
+                                                        that includes personal details, a self-declaration, and
+                                                        responses to
+                                                        evaluative leadership-related behavioral questions. The
+                                                        application
+                                                        form will be digitally accessible.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div id="section4" class="mt-3 scroll">
+                                <div class="faqnews__questions">
+                                    <div class="faqque__title">
+                                        <h3>Selection Criteria </h3>
+                                        <div class="accordion" id="selection">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingselectiononefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseselectiononefaq" aria-expanded="false"
+                                                        aria-controls="collapseselectiononefaq">
+                                                        What are the weightages assigned to different parameters in the
+                                                        selection process?
+                                                        The selection process includes the following weightages
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseselectiononefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingselectiononefaq"
+                                                    data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+                                                        - Average EKAM Percentile Score of last 2 years: 30%
+                                                        - Application Form: 25%
+                                                        - Manager Recommendations: 25%
+                                                        - Special Achievements - Certifications: 5%
+                                                        - Management Inputs: 15%
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingecfaqtwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseecfaqtwo"
+                                                        aria-expanded="false" aria-controls="collapseecfaqtwo">
+                                                        How many participants will be selected each year for the
+                                                        Comprehensive Leadership Development Program?
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseecfaqtwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingecfaqtwo" data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+                                                        A total of 600 participants will be selected each year,
+                                                        comprising
+                                                        450 frontline leaders (Scale IV) and 150 emerging leaders (Scale
+                                                        V &
+                                                        VI).
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingselectionthree">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseselectionthree" aria-expanded="false"
+                                                        aria-controls="collapseselectionthree">
+                                                        How is the EKAM cohort percentile score calculated?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseselectionthree" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingselectionthree" data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        The EKAM cohort percentile score is derived from the averaged
+                                                        cohort-specific percentile scores spanning FY 2022-23 and FY
+                                                        2023-24. The scores are mapped to a score out of 30, with the
+                                                        highest percentile receiving the full 30 marks and lower
+                                                        percentiles
+                                                        scaled accordingly.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingselectionfourfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseselectionfourfaq" aria-expanded="false"
+                                                        aria-controls="collapseselectionfourfaq">
+                                                        How are manager recommendations gathered and scored?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseselectionfourfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingselectionfourfaq"
+                                                    data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        Manager recommendations are collected through a structured
+                                                        digital
+                                                        feedback form. Managers rate the employee on various competency
+                                                        areas using a scale from 1 to 5. Feedback from the last three
+                                                        managers (or a minimum of two) in scales higher than the
+                                                        applicant’s
+                                                        present scale will be considered.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingfivefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapsefivefaq"
+                                                        aria-expanded="false" aria-controls="collapsefivefaq">
+                                                        What certifications are considered for special achievements?
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsefivefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingfivefaq" data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Certifications from both foreign/domestic universities and
+                                                        online
+                                                        platforms are considered. The scoring is based on the number of
+                                                        certifications and the credentials of the issuing institutions,
+                                                        with
+                                                        a maximum of 5 points available.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingselectionsixfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseselectionsixfaq" aria-expanded="false"
+                                                        aria-controls="collapseselectionsixfaq">
+                                                        What role do management inputs play in the selection process?
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseselectionsixfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingselectionsixfaq"
+                                                    data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Management inputs are collected from key organizational figures
+                                                        to
+                                                        provide high-level perspectives and insights into the
+                                                        participant's
+                                                        potential, contributing significantly to the overall assessment.
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingselectionsevenfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseselectionsevenfaq"
+                                                        aria-expanded="false" aria-controls="collapseselectionsevenfaq">
+                                                        How does the selection process ensure diversity among
+                                                        participants?
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseselectionsevenfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingselectionsevenfaq"
+                                                    data-bs-parent="#selection">
+                                                    <div class="accordion-body">
+
+
+                                                        The selection process is strategically designed to ensure a
+                                                        diverse
+                                                        mix of participants by considering various job scales, current
+                                                        postings, job families, and gender representation. This approach
+                                                        helps maintain a balanced and inclusive group of leaders.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="section5" class="mt-3 scroll">
+                                <div class="faqnews__questions">
+                                    <div class="faqque__title">
+                                        <h3>Conclaves and Coaching Sessions
+                                        </h3>
+                                        <div class="accordion" id="coaching">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingcoachingonefaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsecoachingonefaq" aria-expanded="false"
+                                                        aria-controls="collapsecoachingonefaq">
+                                                        How long are the coaching sessions, and what will they involve?
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsecoachingonefaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingcoachingonefaq" data-bs-parent="#coaching">
+                                                    <div class="accordion-body">
+                                                        The coaching sessions will each last around one hour, which will
+                                                        largely depend on the coach and coachee’s conversation. During
+                                                        these
+                                                        sessions, conversations with expert coaches, who are
+                                                        specifically
+                                                        trained in leadership development, will take place. Personalized
+                                                        feedback, guidance, and specific techniques and training methods
+                                                        aimed at enhancing various aspects of personality and leadership
+                                                        skills will be provided.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingcoachingfaqtwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsecoachingfaqtwo" aria-expanded="false"
+                                                        aria-controls="collapsecoachingfaqtwo">
+                                                        Do I need to prepare anything for these coaching sessions?
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsecoachingfaqtwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingcoachingfaqtwo" data-bs-parent="#coaching">
+                                                    <div class="accordion-body">
+                                                        No, specific preparation is not required for the coaching
+                                                        sessions.
+                                                        You are only required to be fully aware of the assessment
+                                                        reports
+                                                        and 360 evaluation report.
+
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingcoachingthree">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsecoachingthree" aria-expanded="false"
+                                                        aria-controls="collapsecoachingthree">
+                                                        Who will be the trainers in these training sessions?
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsecoachingthree" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingcoachingthree" data-bs-parent="#coaching">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        The coaches are experienced professionals who have spent years
+                                                        conducting sessions for leadership development. Your assigned
+                                                        coach
+                                                        would have an in-depth understanding of various personality
+                                                        aspects
+                                                        and would be well-versed in different coaching methods to meet
+                                                        your
+                                                        individual needs.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingcoachingfourfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsecoachingfourfaq" aria-expanded="false"
+                                                        aria-controls="collapsecoachingfourfaq">
+                                                        Where will the in-person classroom sessions be conducted?
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsecoachingfourfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingcoachingfourfaq" data-bs-parent="#coaching">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+                                                        It will be a 9-day residential program conducted in three
+                                                        conclaves.
+                                                        Each conclave will last for three days and will be held in
+                                                        either
+                                                        Bangalore, Hyderabad, or Gurgaon.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingcoachingfaqfive">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsecoachingfaqfive" aria-expanded="false"
+                                                        aria-controls="collapsecoachingfaqfive">
+                                                        Who will be conducting the in-person training sessions?
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsecoachingfaqfive" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingcoachingfaqfive" data-bs-parent="#coaching">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        Industry veterans with extensive experience in the banking
+                                                        sector,
+                                                        reputed leadership trainers, and academicians from prestigious
+                                                        institutions, who are experts in their fields and well-versed in
+                                                        interactive teaching methods, will be involved.
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingcoachingsixfaq">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsecoachingsixfaq" aria-expanded="false"
+                                                        aria-controls="collapsecoachingsixfaq">
+                                                        What topics will be covered in the in-person training sessions?
+
+
+
+
+
+
+
+                                                    </button>
+                                                </h2>
+                                                <div id="collapsecoachingsixfaq" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingcoachingsixfaq" data-bs-parent="#coaching">
+                                                    <div class="accordion-body">
+                                                        <strong></strong>
+
+                                                        The program will cover a range of topics, including behavioral
+                                                        subjects such as decision-making and mindfulness. It will also
+                                                        address new age topics like design thinking, artificial
+                                                        intelligence, and data analytics. Additionally, there would also
+                                                        be
+                                                        sessions on functional areas such as collections and recovery,
+                                                        sales
+                                                        and marketing, operations, HR and digital banking.
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION START -->
+    <footer>
+        <div class="container">
+            <div class="footer__wrapper">
+                <img src="./images/Union_Bank_of_India_Logo.png" alt="Union_Bank_of_India_Logo" class="footer__logo">
+                <ul class="mb-0 list-unstyled footer__info">
+                    <li>
+                        <h3 class="footer__contactus">Contact Us</h3>
+                    </li>
+                    <li>
+                        <span class="footer__icons">
+                            <img src="./images/tabler_phone-call.svg" alt="phone"></span>
+                        <p></p>
+                    </li>
+                    <li>
+                        <span class="footer__icons"><img src="./images/tabler_mail.svg" alt="mail"></span>
+                        <p><a href="mailto:LDP@unionbankofindia.com"></a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__copyrightsection ">
+                <p class="text-end">Design . All right reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="./vendor/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/Jquery/jquery.min.js"></script>
+    <script src="./vendor/Owl-Carousel/js/owl.carousel.min.js"></script>
+    <script src="./vendor/Videojs/js/video.min.js"></script>
+
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('.scroll');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', function () {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    });
+
+    window.addEventListener('scroll', function () {
+        var header = document.getElementById('myBox');
+        if (window.scrollY > 0) {
+            header.classList.add('fixed-top');
+        } else {
+            header.classList.remove('fixed-top');
+        }
+    });
+    function highlightTerm() {
+        // Get the search term
+        const term = document.getElementById('searchInput').value;
+        if (!term) return; // Do nothing if the search term is empty
+
+        // Get the content div
+        const contentDiv = document.getElementById('content');
+        // Get the content inside the div
+        const content = contentDiv.innerHTML;
+
+        // Create a regular expression to find the search term
+        const regex = new RegExp(`(${term})`, 'gi');
+        // Replace the search term with the term wrapped in a mark tag
+        const newContent = content.replace(regex, '<mark>$1</mark>');
+
+        // Set the new content back to the div
+        contentDiv.innerHTML = newContent;
+    }
+
+    // Add an event listener for the input focus event
+    document.getElementById('searchInput').addEventListener('focus', highlightTerm);
+</script>
+
+</html>

@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./vendor/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/Owl-Carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/Owl-Carousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./vendor/Videojs/css/video-js.css">
+    <link rel="stylesheet" href="./css/ldp-global.css">
+</head>
+
+<body>
+    <!-- HEADER SECTION START -->
+    <header class="header " id="header">
+
+        <div class="container-fluid">
+            <div class="header__container">
+                <div class="header__logosection d-flex align-items-center">
+                    <img src="./images/Union_Bank_of_India_Logo.png" alt="Union_Bank_of_India_Logo" class="img-fluid">
+                    <img src="./images/advit-logo.png" class="advit-logo" alt="advit-logo" class="img-fluid">
+                </div>
+                <div class="header__menusection">
+                    <nav class="header__navbar">
+
+                        <ul class="header__navbarlist p-0">
+                            <li>
+                                <a href="./index.html" class="active">Home</a>
+                            </li>
+                            <li>
+                                <a href="./about-us.html" class="">About Us</a>
+                            </li>
+                            <li>
+                                <a href="./whatisit.html" class="">What’s In It?</a>
+
+                            </li>
+                            <li>
+
+                                <a href="./faculty.html" class=""> Faculty</a>
+                            </li>
+                            <li>
+                                <a href="./apply.html" class="header__applylink">
+                                    <span class="pagelink__apply">Apply <img src="./images/aply-cursor.png"
+                                            alt="apply-cursor" class="pagelink__linkscursor" class="img-fluid"></span>
+                                </a>
+
+                            </li>
+                            <!-- <li>
+                                <a href="">Curriculum</a>
+
+                            </li> -->
+                            <li>
+                                <a href="./faq.html" class="">FAQs</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class="header__lastsection">
+                    <span class=" header__sidebarclick mx-2">
+                        <img src="./images/menu-icon.png" alt="menu-icon" class="img-fluid">
+                    </span>
+
+                    <a href="javascript:void(0)" class=" header__otherlink mx-2" class="img-fluid">
+                        <i class="fa fa-upload"></i>
+                    </a>
+
+                    <a href="javascript:void(0)" class="header__login mx-2"><span class="mx-2"> <img
+                                src="./images/next-page.png" alt="menu-icon" class="img-fluid"></span>Login</a>
+
+                    <a href="javascript:void(0)" class="header__login mx-2 d-none"><span class="mx-2">
+                            <img src="./images/next-page.png" alt="menu-icon" class="img-fluid"></span>Logout</a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- <div class="container navbar">
+            <div class="unilogo">
+                <img src=".././images/Union_Bank_of_India_Logo.png">
+            </div>
+            <nav>
+                <ul class="ldp-nav-link">
+                    <li class="ldp-nav-links active">
+                        Home
+                    </li>
+                    <li class="ldp-nav-links">
+                        About Us
+                    </li>
+                    <li class="ldp-nav-links">
+                        What’s In It?
+                    </li>
+                    <li class="ldp-nav-links">
+                        Faculty
+                    </li>
+                    <li class="ldp-nav-links">
+                        Curriculum
+                    </li>
+                    <li class="ldp-nav-links">
+                        FAQs
+                    </li>
+                    <li class="ldp-nav-links">
+                        <div class="ham-box"></div>
+                    </li>
+                </ul>
+                <button class="ldp-logbut">
+                    <img src=".././images/loginicon.png">
+                </button>
+
+            </nav>
+        </div> -->
+    </header>
+    <main>
+
+        <!-- BANNER SECTION START -->
+        <section class="custom-ldp-slider">
+            <div class="custom-ldp-slider-c">
+                <!-- QUIZ SECTION START -->
+
+                <div class="quiz__form">
+                    <div class="quiz__formwrapper">
+                        <div class="quiz__formdata" id="'#myForm">
+                            <!-- <form action="<?php echo base_url('ldp/Home/save_quiz');?>" method="POST"> -->
+                            <form action="" method="POST" id="myForm">
+                                <div class="quiz__formdataquestion">
+                                    <img src="./images/quiz.png" alt="quiz ">
+                                    <p class="quiz__question">
+                                        Question 1
+                                    </p>
+                                </div>
+                                <!-- <div class="quiz__que"> commented by raheem-->
+                                <div class="">
+                                    <input type="hidden" name="question" value="">
+                                    <label class="container-check">
+                                        Option 1
+                                        <input type="radio" checked="checked" name="answer" value="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-check">
+                                        Option 2
+                                        <input type="radio" name="answer" value="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-check">
+                                        Option 3
+                                        <input type="radio" name="answer" value="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-check">
+                                        Option 4
+                                        <input type="radio" name="answer" value="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="quiz__submit text-center">
+                                    <button class="btn btn-quizsubmit" type="submit">Submit</button>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                        <span class="quiz__button">
+                            <img src="./images/blup.gif" alt="quiz-Icon">Quiz Corner
+                        </span>
+                    </div>
+                    <div class="quiz__response text-center hidden">
+                        <img src="./images/please-login.png" alt="please-login">
+                        <h3 class="mb-3">Please Login to submit your response.</h3>
+                    </div>
+                    <div class="quiz__response text-center hidden" id="successMessage">
+                        <img src="./images/form-submit.gif" width="100%" alt="form-submit">
+                        <h3>Your response has been recorded!!!</h3>
+                    </div>
+                    <div class="quiz__poll hidden" id="poll">
+                        <div class="quiz__que ">
+                            <form action="">
+                                <div class="quiz__formdataquestion border-0 mb-2">
+                                    <img src="/./images/quiz.png" alt="quiz ">
+                                    <p class="quiz__question">
+                                        Question 1
+                                    </p>
+                                </div>
+                                <div class="quiz__que contactus__polldata">
+
+                                    <ul class="mb-0 p-0">
+
+                                        <li>
+                                            <div class="contactsus__questioncontainer">
+                                                <div id="dynamicDiv1" class="options ">
+                                                    Option 1
+                                                </div>
+                                            </div>
+                                            <div id="widthForm1" class="pollpercentage">
+                                                <input type="text" id="widthInput1" value="40%" disabled>
+
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="contactsus__questioncontainer">
+                                                <div id="dynamicDiv2" class="options">
+                                                    Option 2
+                                                </div>
+                                            </div>
+                                            <div id="widthForm2" class="pollpercentage">
+                                                <input type="text" id="widthInput2" value="30%" disabled>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="contactsus__questioncontainer">
+                                                <div id="dynamicDiv3" class="options">
+                                                    Option 3
+                                                </div>
+                                            </div>
+                                            <div id="widthForm3" class="pollpercentage">
+                                                <input type="text" id="widthInput3" value="20%" disabled>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="contactsus__questioncontainer">
+                                                <div id="dynamicDiv4" class="options">
+                                                    Option 4
+                                                </div>
+                                            </div>
+                                            <div id="widthForm4" class="pollpercentage">
+                                                <input type="text" id="widthInput4" value="30%" disabled>
+                                            </div>
+
+                                        </li>
+
+
+                                    </ul>
+
+
+                                    <p class="mb-2 mt-2">
+                                        240 Responses <span>• Poll Open</span>
+                                    </p>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="custom-ldp-slider-owl-carousel  owl-carousel owl-theme" id="banner-slider">
+
+                    <div class="item custom-item">
+                        <img src="./images/carouselposteroutlines-1.jpg" class="img-fluid">
+                    </div>
+                    <div class="item custom-item">
+                        <img src="./images/carouselposteroutlines-2.jpg" class="img-fluid">
+                    </div>
+                    <div class="item custom-item">
+                        <img src="./images/carouselposteroutlines-3.jpg" class="img-fluid">
+                    </div>
+                    <div class="item custom-item">
+                        <img src="./images/carouselposteroutlines-4.jpg" class="img-fluid">
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+        <!-- ADVIT SECTION START -->
+        <!-- CONTACT US SECTION START -->
+        <div class="contactus">
+            <div class="contactus__wrapper">
+                <div class="contactus__form " id="contactusForm">
+                    <h3 class="text-center">Enter Your Details</h3>
+                    <form action=" method=" POST" class="p-2 contactus__formfield">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <label for="">PF ID</label>
+
+                                <input type="text" value="" class="form-control" name="pfno"
+                                    placeholder="Enter Your PF ID">
+                            </div>
+                            <div class="col-md-12 mt-3 ">
+                                <label for="">Email ID</label>
+
+                                <input type="email" value="" class="form-control" name="email"
+                                    placeholder="Enter Your Email Id">
+                            </div>
+                            <div class="col-md-12 mt-3 mb-4">
+                                <label for="">Your Query</label>
+
+                                <textarea id="" class="form-control" name="query"
+                                    placeholder="Enter Your Query"></textarea>
+                            </div>
+
+                            <div class="col-md-12 text-center ">
+                                <button class="btn btn-quizsubmit" type="submit">Submit</button>
+                            </div>
+
+
+                            <!-- <a href="<?php echo base_url();?>" class="btn btn-quizsubmit">Please Login to Continue</a> -->
+
+                        </div>
+                    </form>
+                </div>
+                <div class=" quiz__response text-center hidden" id="contactus__formsubmit">
+                    <img src="./images/form-submit.gif" width="100%" alt="form-submit">
+                    <h3>We have recorded your query and we will get back to you within 48 hours.</h3>
+                </div>
+            </div>
+            <div class="contactus-button">
+                <span><img src="./images/phone-gif.gif" alt="phone">Contact Us</span>
+            </div>
+
+
+        </div>
+        <!-- MANAGER RECOMANDATION -->
+        <div class="mangerrec">
+            <div class="mangerrec__wrapper">
+                <div class="mangerrec__response  text-center">
+                    <img src="./images/not-submit.gif" width="70%" alt="please-login">
+                    <h3 class="mb-3">Please login to proceed further</h3>
+                    <div class="col-md-12 text-center mb-4">
+                        <button class="btn btn-quizsubmit" type="submit">Login</button>
+                    </div>
+                </div>
+                <div class="mangerrec__button"><img src="./images/mang.gif" alt="mang">Manager
+                    Recommendation</div>
+            </div>
+
+        </div>
+        <section class="advit">
+
+            <div class="ldp-banner-owl-carousel  owl-carousel owl-theme">
+                <div class="item itemone">
+                    <img src="./images/MainBanner1.png">
+                </div>
+                <div class="item itemtwo">
+                    <img src="/./images/MainBanner2.png">
+                </div>
+            </div>
+            <section class="advitdata">
+
+
+                <div class="container">
+                    <!-- <h1 class="advitdata__title">Welcome to <span>Advith</span>, your one-stop solution for executive
+                    learning.
+                </h1> -->
+                    <h1 class="advitdata__title">A program like never before
+                    </h1>
+                    <p class="advitdata__para">Empowering leadership excellence, dedicated to cultivating visionary
+                        leaders
+                        who drive innovation and adaptability.</p>
+
+                    <div class="advitdata__counters" id="counter">
+                        <div class="advitdata__count ">
+                            <span class="count percent" data-count="105">0</span>
+                            <p>Years Of Legacy</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="600">0</span>
+                            <p>Participants</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="85">0+</span>
+                            <p>Faculty</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="4">0</span>
+                            <p>Centers</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="7">0</span>
+                            <p>Collaborations</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="30">0</span>
+                            <p>Training Session</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="25">0</span>
+                            <p>Disciplines</p>
+                        </div>
+                        <div class="advitdata__count">
+                            <span class="count percent" data-count="35">0+</span>
+                            <p>Industry Experts</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+        <!-- PROGRAM LINKS SECTION START -->
+        <section class="pagelinks">
+            <div class="pagelinks__wrapper">
+                <a class="pagelink__links" href="./about-us.html">
+                    <img src="././images/AboutUs.png" alt="about-us">
+                    <h4 class="pagelink__linktitle">About The Program</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+                <a class="pagelink__links" href="./whatisit.html">
+                    <img src="././images/WhatsInIt.png" alt="WhatsInIt">
+                    <h4 class="pagelink__linktitle">What’s In It For You?</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+
+                <a class="pagelink__links" href="./timeline.html">
+                    <img src="././images/ProgramTimeline.png" alt="ProgramTimeline">
+                    <h4 class="pagelink__linktitle">Program Timeline</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+                <a class="pagelink__links" href="./selection-process.html">
+                    <img src="././images/SelectionProgress.png" alt="SelectionProgress">
+                    <h4 class="pagelink__linktitle">Selection Process</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+                <a class="pagelink__links" href="./industry-process.html">
+                    <img src="././images/IndustryExperts.png" alt="IndustryExperts">
+                    <h4 class="pagelink__linktitle">Industry Experts</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+                <a class="pagelink__links" href="./curriculum.html">
+                    <img src="././images/Curriculum.png" alt="Curriculum">
+                    <h4 class="pagelink__linktitle">Curriculum</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+                <a class="pagelink__links" href="./faq.html">
+                    <img src="././images/FAQs.png" alt="FAQs">
+                    <h4 class="pagelink__linktitle">FAQs</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+                <a class="pagelink__links" href="./apply.html">
+                    <img src="././images/SelfApplication.png" alt="SelfApplication">
+                    <span class="pagelink__apply">Apply <img src="././images/aply-cursor.png" alt="apply-cursor"
+                            class="pagelink__linkscursor"></span>
+                    <h4 class="pagelink__linktitle">Application Form</h4>
+                    <div class="campuscenter__overlay"></div>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- VIDEO SECTION START -->
+        <section class="globalfacilities">
+            <div class="container">
+                <div class="globalfacilities__wrapper row">
+                    <div class="globalfacilities__leftsection col-6">
+                        <div class="globalfacilities__info">
+                            <h3><span><img src="./images/Unlock potential.png" alt=""></span>Accelerated Leadership
+                                Trajectory
+                            </h3>
+                            <p>Demonstrate the next level of leadership by overcoming personal interferences and
+                                unleashing
+                                full potential.
+                            </p>
+                        </div>
+                        <div class="globalfacilities__info">
+                            <h3><span><img src="./images/emotional-intelligence.png"
+                                        alt="emotional-intelligence"></span>Innovative Mindset
+                            </h3>
+                            <p>Foster leaders who embrace creativity, drive innovation, and pursue forward-thinking
+                                solutions to challenges and opportunities.
+                            </p>
+                        </div>
+                        <div class="globalfacilities__info">
+                            <h3><span><img src="./images/functional-expert.png" alt=""></span>Emotional Resilience
+                            </h3>
+                            <p>Build emotional resilience to empower healthy risk-taking and drive active collaboration.
+                            </p>
+                        </div>
+                        <div class="globalfacilities__info">
+                            <h3><span><img src="./images/adaptive-leadership.png"
+                                        alt="adaptive-leadership"></span>Ethical
+                                Depth
+                            </h3>
+                            <p>Cultivate leaders who demonstrate integrity, authenticity, and ethical behavior in their
+                                actions and decisions.
+                            </p>
+                        </div>
+                        <div class="globalfacilities__info">
+                            <h3><span><img src="./images/strategic-acumen.png" alt="strategic-acumen"></span>Business
+                                Integration
+                            </h3>
+                            <p>Strengthen linkages between leadership development and business operations through
+                                rigorous
+                                governance and tracking to drive strong returns on investments.
+                            </p>
+                        </div>
+                        <div class="globalfacilities__info">
+                            <h3><span><img src="./images/Technical-Master.png" alt="Technical Master"></span>Technical
+                                Expertise
+                            </h3>
+                            <p>Drive strong improvement in technical skills to address growing needs for the bank to win
+                                effectively.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="globalfacilities__rightsection col-6">
+                        <div class="globalfacilities__video">
+                            <!-- <video width="100%" height="285" controls>
+                            <source src="movie.mp4" type="video/mp4">
+
+                            Your browser does not support the video tag.
+                        </video> -->
+                            <div class="globalfacilities__data">
+                                <!-- <img src="./images/video.png" alt="video" width="100%"
+                                height="100%"> -->
+                                <video id="my-video" class="video-js video-lnd" controls preload="auto" width="640"
+                                    height="264" poster="./images/video.png" data-setup="{}">
+                                    <!-- <source src="video/15921892-uhd_3840_2160_50fps.mp4"
+                                    type="video/mp4" /> -->
+                                    <source src="./video/15921892-uhd_3840_2160_50fps.mp4" type="video/mp4" />
+                                    <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+                                    <p class="vjs-no-js">
+                                        To view this video please enable JavaScript, and consider upgrading to a
+                                        web browser that
+                                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports
+                                            HTML5
+                                            video</a>
+                                    </p>
+                                </video>
+                                <div class="globalfacilities__play">
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="globalfacilities__title">
+                                <h2>Global Facilities Portal</h2>
+
+                                <span class="globalfacilities__zoom" id="fullscreen-button"><img
+                                        src="./images/video-zoom.png" alt="video-zoom"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- NEWS & EVENTS SECTION START -->
+        <section class=" newsevents">
+            <div class="container" id="progressBarContainer">
+                <div class="title-section">
+                    <h4>News & Events</h4>
+                </div>
+
+
+                <div class="newsevents__commingsoon">
+                    <h3>Something Big coming your way very soon!!!</h3>
+                </div>
+
+
+                <div class="newsevents__progressbarcontainer">
+                    <div class="newsevents_progressbar">
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container">
+                <div class="newsevents__slider" id="otherContent">
+                    <div class="conatiner ">
+                        <div class=" newsevents__slideconatiner owl-carousel owl-theme">
+
+                            <div class=" item">
+
+                                <div class="card">
+                                    <a href="">
+                                        <img src="././images/slider-img.png" class="card-img-top" alt="...">
+                                    </a>
+
+                                    <div class="card-body">
+                                        <a href="">
+                                            <h5 class="card-title">
+                                                Sweetened Spirits: Spreading 'Halloween' cheer with the annual candy
+                                                drive With a well-qualified and experienced team of enterprising
+                                                professionals
+                                            </h5>
+                                        </a>
+
+                                        <p class="card-text">With a well-qualified and experienced team of enterprising
+                                            professionals
+                                        </p>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class=" item">
+
+                                <div class="card">
+                                    <a href="">
+                                        <img src="././images/slider-img.png" class="card-img-top" alt="...">
+                                    </a>
+
+                                    <div class="card-body">
+                                        <a href="">
+                                            <h5 class="card-title">
+                                                Sweetened Spirits: Spreading 'Halloween' cheer with the annual candy
+                                                drive With a well-qualified and experienced team of enterprising
+                                                professionals
+                                            </h5>
+                                        </a>
+
+                                        <p class="card-text">With a well-qualified and experienced team of enterprising
+                                            professionals
+                                        </p>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class=" item">
+
+                                <div class="card">
+                                    <a href="">
+                                        <img src="././images/slider-img.png" class="card-img-top" alt="...">
+                                    </a>
+
+                                    <div class="card-body">
+                                        <a href="">
+                                            <h5 class="card-title">
+                                                Sweetened Spirits: Spreading 'Halloween' cheer with the annual candy
+                                                drive With a well-qualified and experienced team of enterprising
+                                                professionals
+                                            </h5>
+                                        </a>
+
+                                        <p class="card-text">With a well-qualified and experienced team of enterprising
+                                            professionals
+                                        </p>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class=" item">
+
+                                <div class="card">
+                                    <a href="">
+                                        <img src="././images/slider-img.png" class="card-img-top" alt="...">
+                                    </a>
+
+                                    <div class="card-body">
+                                        <a href="">
+                                            <h5 class="card-title">
+                                                Sweetened Spirits: Spreading 'Halloween' cheer with the annual candy
+                                                drive With a well-qualified and experienced team of enterprising
+                                                professionals
+                                            </h5>
+                                        </a>
+
+                                        <p class="card-text">With a well-qualified and experienced team of enterprising
+                                            professionals
+                                        </p>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEDEARSHIP DESK SECTION START -->
+        <section class="leaderdesk">
+            <div class="container">
+                <div class="title-section">
+                    <h4>Leadership Desk</h4>
+                </div>
+
+                <div class="custom-ldp-slider-owl-carousel owl-carousel owl-theme">
+
+                    <div class="item custom-item">
+                        <div class="leaderdesk__slider">
+                            <div class="leaderdesk__imgcontainer">
+                                <img src="./images/md.png" alt="md">
+
+                                <span class="bottom-line"></span>
+                            </div>
+                            <div class="leaderdesk__data">
+                                <h5 class="leaderdesk__name">Varun Mehra</h5>
+                                <p class="leaderdesk__designation">Vice President</p>
+
+                                <p class="leaderdesk__para">"Absolutely thrilled with the service! The team was
+                                    professional, responsive, and went above and beyond to meet our needs. Highly
+                                    recommend
+                                    them for anyone seeking top-notch expertise."
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CAMPUSES AND CENTER SECTION START -->
+        <section class="campuscenter">
+            <div class="container">
+                <div class="title-section">
+                    <h4>Campuses & Centre</h4>
+                </div>
+
+                <div class="campuscenter__centersname">
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="">
+                                <img src="./images/gurgoan-center.png" alt="gurgoan-center" class="img-fluid">
+
+                                <p>Gurgaon</p>
+
+                                <div class="campuscenter__overlay"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/banglore-center.png" alt="banglore-center" class="img-fluid">
+
+                                <p>Banglore</p>
+                                <div class="campuscenter__overlay"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/hydrabad-center.png" alt="hyderabad-center" class="img-fluid">
+
+                                <p>Hyderabad</p>
+                                <div class="campuscenter__overlay"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/lacknow-center.png" alt="lacknow-center" class="img-fluid">
+
+                                <p>Lucknow</p>
+                                <div class="campuscenter__overlay"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION START -->
+    <footer>
+        <div class="container">
+            <div class="footer__wrapper">
+                <img src="./images/Union_Bank_of_India_Logo.png" alt="Union_Bank_of_India_Logo" class="footer__logo">
+                <ul class="mb-0 list-unstyled footer__info">
+                    <li>
+                        <h3 class="footer__contactus">Contact Us</h3>
+                    </li>
+                    <li>
+                        <span class="footer__icons">
+                            <img src="./images/tabler_phone-call.svg" alt="phone"></span>
+                        <p></p>
+                    </li>
+                    <li>
+                        <span class="footer__icons"><img src="./images/tabler_mail.svg" alt="mail"></span>
+                        <p><a href="mailto:LDP@unionbankofindia.com"></a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__copyrightsection ">
+                <p class="text-end">Design . All right reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+    <script src="./vendor/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/Jquery/jquery.min.js"></script>
+    <script src="./vendor/Owl-Carousel/js/owl.carousel.min.js"></script>
+    <script src="./vendor/Videojs/js/video.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Header Menu
+
+            $(".header__sidebarclick").click(function () {
+
+                $(".header__navbar").toggleClass("header__dnonelist");
+            });
+            $(".header__sidebarclick").click(function () {
+
+                $(".header__sidebarclick img").toggleClass("header__imgrotate");
+            });
+            // Banner Slider JS
+            $(".ldp-banner-owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                dots: false,
+                autoplayTimeout: 3000, // 3 seconds
+                autoplayHoverPause: true
+            });
+            // Advit Section Slider JS
+            $(".custom-ldp-slider-owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000, // 3 seconds
+                autoplayHoverPause: true
+            });
+
+            // News & Events
+            $(".newsevents__slideconatiner").owlCarousel({
+                items: 3,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000, // 3 seconds
+                autoplayHoverPause: true,
+                margin: 25,
+                nav: true,
+                dots: false,
+                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+
+            });
+            $(".quiz__form, .contactus, .mangerrec").click(function (event) {
+                event.stopPropagation();
+            });
+            // Close Quiz And Floating Windows
+            $("body").click(function (event) {
+                // Check if the clicked element is not one of the buttons or their descendants
+                if (!$(event.target).closest('.quiz__button, .contactus-button, .mangerrec__button').length) {
+                    // Add your class to the desired element here
+                    $(".quiz__form").removeClass("quiz__formshow");
+                    $(".mangerrec").removeClass("mangerrec__formshow");
+                    $(".contactus").removeClass("contactus__formshow");
+                }
+            });
+            $(".quiz__button").click(function () {
+
+                $(".quiz__form").toggleClass("quiz__formshow");
+                $(".contactus").removeClass("contactus__formshow");
+                $(".mangerrec").removeClass("mangerrec__formshow");
+            });
+            $(".contactus-button").click(function () {
+
+                $(".contactus").toggleClass("contactus__formshow");
+                $(".quiz__form").removeClass("quiz__formshow");
+                $(".mangerrec").removeClass("mangerrec__formshow");
+            });
+            $(".mangerrec__button").click(function () {
+
+                $(".mangerrec").toggleClass("mangerrec__formshow");
+                $(".contactus").removeClass("contactus__formshow");
+                $(".quiz__form").removeClass("quiz__formshow");
+            });
+
+
+        });
+        // Counter JS Code
+        var counted = 0;
+        $(window).scroll(function () {
+
+            var oTop = $('#counter').offset().top - window.innerHeight;
+            if (counted == 0 && $(window).scrollTop() > oTop) {
+                $('.count').each(function () {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                        countNum: countTo
+                    },
+
+                        {
+
+                            duration: 9000, // Decreased animation duration to 2000 milliseconds
+                            easing: 'swing',
+                            step: function () {
+                                $this.text(Math.floor(this.countNum));
+                            },
+                            complete: function () {
+                                $this.text(this.countNum);
+                                //alert('finished');
+                            }
+
+                        });
+                });
+                counted = 1;
+            }
+
+        });
+
+        // quiz form submit
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Hide the form
+            document.getElementById('myForm').classList.add('hidden');
+
+            // Show the success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('show');
+
+            // After 1 second, hide the success message and show the poll
+            setTimeout(function () {
+                successMessage.classList.remove('show');
+                setTimeout(function () {
+                    successMessage.classList.add('hidden');
+                    const poll = document.getElementById('poll');
+                    poll.classList.remove('hidden');
+                    poll.classList.add('show');
+                }, 500); // Wait for the transition to complete before hiding
+            }, 2000);
+        });
+
+        // Contact Us form submit
+        document.getElementById('contactusForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Hide the form
+            document.getElementById('contactusForm').classList.add('hidden');
+
+            // Show the response div with animation
+            const responseDiv = document.getElementById('contactus__formsubmit');
+            responseDiv.classList.remove('hidden');
+            setTimeout(function () {
+                responseDiv.classList.add('show');
+            }, 500); // Add a slight delay to trigger the transition
+        });
+
+        // Poll1
+        document.getElementById('widthInput1').addEventListener('input', function () {
+            var inputValue = this.value;
+            var dynamicDiv = document.getElementById('dynamicDiv1');
+
+            if (inputValue.match(/^[0-9]+(px|%)$/)) {
+                dynamicDiv.style.width = inputValue;
+            } else {
+                dynamicDiv.style.width = '0';
+            }
+        });
+
+        // Function to set value and trigger input event
+        function setValueAndTriggerEvent(inputId, value, disabled) {
+            var inputElement = document.getElementById(inputId);
+            inputElement.disabled = false; // Enable the input field temporarily
+            inputElement.value = value;
+            var event = new Event('input', {
+                'bubbles': true,
+                'cancelable': true
+            });
+            inputElement.dispatchEvent(event);
+            inputElement.disabled = disabled; // Disable the input field again if needed
+        }
+
+        // Trigger the input event for the initial value and keep the input disabled
+        setValueAndTriggerEvent('widthInput1', document.getElementById('widthInput1').value, true);
+
+        // Poll 2
+        document.getElementById('widthInput2').addEventListener('input', function () {
+            var inputValue = this.value;
+            var dynamicDiv = document.getElementById('dynamicDiv2');
+
+            if (inputValue.match(/^[0-9]+(px|%)$/)) {
+                dynamicDiv.style.width = inputValue;
+            } else {
+                dynamicDiv.style.width = '0';
+            }
+        });
+
+        // Function to set value and trigger input event
+        function setValueAndTriggerEvent(inputId, value, disabled) {
+            var inputElement = document.getElementById(inputId);
+            inputElement.disabled = false; // Enable the input field temporarily
+            inputElement.value = value;
+            var event = new Event('input', {
+                'bubbles': true,
+                'cancelable': true
+            });
+            inputElement.dispatchEvent(event);
+            inputElement.disabled = disabled; // Disable the input field again if needed
+        }
+
+        // Trigger the input event for the initial value and keep the input disabled
+        setValueAndTriggerEvent('widthInput2', document.getElementById('widthInput2').value, true);
+
+        // Poll 3
+        document.getElementById('widthInput3').addEventListener('input', function () {
+            var inputValue = this.value;
+            var dynamicDiv = document.getElementById('dynamicDiv3');
+
+            if (inputValue.match(/^[0-9]+(px|%)$/)) {
+                dynamicDiv.style.width = inputValue;
+            } else {
+                dynamicDiv.style.width = '0';
+            }
+        });
+
+        // Function to set value and trigger input event
+        function setValueAndTriggerEvent(inputId, value, disabled) {
+            var inputElement = document.getElementById(inputId);
+            inputElement.disabled = false; // Enable the input field temporarily
+            inputElement.value = value;
+            var event = new Event('input', {
+                'bubbles': true,
+                'cancelable': true
+            });
+            inputElement.dispatchEvent(event);
+            inputElement.disabled = disabled; // Disable the input field again if needed
+        }
+
+        // Trigger the input event for the initial value and keep the input disabled
+        setValueAndTriggerEvent('widthInput3', document.getElementById('widthInput3').value, true);
+
+        // Poll 4
+        document.getElementById('widthInput4').addEventListener('input', function () {
+            var inputValue = this.value;
+            var dynamicDiv = document.getElementById('dynamicDiv4');
+
+            if (inputValue.match(/^[0-9]+(px|%)$/)) {
+                dynamicDiv.style.width = inputValue;
+            } else {
+                dynamicDiv.style.width = '0';
+            }
+        });
+
+        // Function to set value and trigger input event
+        function setValueAndTriggerEvent(inputId, value, disabled) {
+            var inputElement = document.getElementById(inputId);
+            inputElement.disabled = false; // Enable the input field temporarily
+            inputElement.value = value;
+            var event = new Event('input', {
+                'bubbles': true,
+                'cancelable': true
+            });
+            inputElement.dispatchEvent(event);
+            inputElement.disabled = disabled; // Disable the input field again if needed
+        }
+
+        // Trigger the input event for the initial value and keep the input disabled
+        setValueAndTriggerEvent('widthInput4', document.getElementById('widthInput4').value, true);
+
+        // Function to handle input and update dynamic div
+        function handleInput(inputId, dynamicDivId) {
+            var inputValue = document.getElementById(inputId).value;
+            var dynamicDiv = document.getElementById(dynamicDivId);
+
+            if (inputValue.match(/^[0-9]+(px|%)$/)) {
+                dynamicDiv.style.width = inputValue;
+            } else {
+                dynamicDiv.style.width = '0';
+            }
+        }
+
+        // Function to set value and trigger input event
+        function setValueAndTriggerEvent(inputId, value, disabled) {
+            var inputElement = document.getElementById(inputId);
+            inputElement.disabled = false; // Enable the input field temporarily
+            inputElement.value = value;
+            var event = new Event('input', {
+                'bubbles': true,
+                'cancelable': true
+            });
+            inputElement.dispatchEvent(event);
+            inputElement.disabled = disabled; // Disable the input field again if needed
+        }
+
+        // Trigger the input event for the initial values and keep the inputs disabled
+        setValueAndTriggerEvent('widthInput1', document.getElementById('widthInput1').value, true);
+        setValueAndTriggerEvent('widthInput2', document.getElementById('widthInput2').value, true);
+        setValueAndTriggerEvent('widthInput3', document.getElementById('widthInput3').value, true);
+        setValueAndTriggerEvent('widthInput4', document.getElementById('widthInput4').value, true);
+
+        // Array to store input values
+        var inputs = [{
+            id: 'widthInput1',
+            dynamicDivId: 'dynamicDiv1'
+        },
+        {
+            id: 'widthInput2',
+            dynamicDivId: 'dynamicDiv2'
+        },
+        {
+            id: 'widthInput3',
+            dynamicDivId: 'dynamicDiv3'
+        },
+        {
+            id: 'widthInput4',
+            dynamicDivId: 'dynamicDiv4'
+        }
+        ];
+
+        // Find the input with the highest value
+        var maxInputValue = -Infinity;
+        var maxInputId;
+        inputs.forEach(function (input) {
+            var inputValue = parseFloat(document.getElementById(input.id).value);
+            if (!isNaN(inputValue) && inputValue > maxInputValue) {
+                maxInputValue = inputValue;
+                maxInputId = input.dynamicDivId;
+            }
+        });
+
+        // Add a class to the dynamic div with the highest value
+        if (maxInputId) {
+            document.getElementById(maxInputId).classList.add('highest');
+        }
+
+
+        const player = videojs('my-video', {
+            fluid: true
+        });
+
+        document.getElementById('fullscreen-button').addEventListener('click', () => {
+            if (player.requestFullscreen) {
+                player.requestFullscreen();
+            } else if (player.webkitEnterFullScreen) {
+                player.webkitEnterFullScreen(); // Safari support
+            } else if (player.mozRequestFullScreen) {
+                player.mozRequestFullScreen(); // Firefox support
+            } else if (player.msRequestFullscreen) {
+                player.msRequestFullscreen(); // IE/Edge support
+            }
+        });
+    </script>
+</body>
+
+</html>
